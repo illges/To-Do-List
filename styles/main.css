@@ -1,0 +1,19 @@
+
+/*CSS comment*/
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 20px; 
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 35px;
+	margin: 10px;
+}
+
+#content {
+  display: grid;
+}
