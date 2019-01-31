@@ -9,11 +9,65 @@ html {
 	font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-	font-size: 35px;
-	margin: 10px;
-}
-
 #content {
   display: grid;
 }
+
+header {
+  display: grid;
+  font-size: 35px;
+  padding: 10px;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  /* grid-template-rows: auto; */
+}
+
+.projects {
+  display: grid;
+  justify-content: right;
+  margin: 5px;
+}
+
+.tasks {
+  display: grid;
+  padding: 10px;
+  justify-content: left;
+}
+
+.tasks > * {
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+}
+
+.new-task {
+  display: none;
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  color: white;
+  background-color: #2667e0;
+}
+
+#task-list > * {
+  margin-top: 5px;
+  padding: 10px;
+  border-top: 2px solid #b93030;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 5px 5px 5px 80px;;
+  color: white;
+  background-color: #b93030;
+}
+
+
+
+

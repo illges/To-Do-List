@@ -1,17 +1,25 @@
-import sleep from './index';
-import todo_item from './objectController';
+import {todo_item, tasks} from './objectController';
 
-const display = (item) => {
-  const content = document.querySelector('#content');
+const displayTasks = () => {
+  const div = document.getElementById('task-list');
   const task = document.createElement('div');
-  task.innerHTML = item.list();
-
-  content.appendChild(task);
+  // task.innerHTML = `${tasks[0].title} -- ${tasks[0].description}`;
+  task.innerHTML = tasks[tasks.length -1].list();
+  
+  div.appendChild(task);
 }
 
-const loadPage = (() => {
-  const content = document.querySelector('#content');
+const displayForm = () => {
+  const form = document.querySelector('.new-task');
+  const newTask = document.querySelector('button');
+  
+  if (form.style.display === "") {
+    form.style.display = "grid";
+    newTask.innerHTML = "Cancel";
+  } else if (form.style.display === "grid") {
+    form.style.display = "";
+    newTask.innerHTML = "New Task";
+  }
+}
 
-})();
-
-export default display
+export {displayTasks, displayForm};

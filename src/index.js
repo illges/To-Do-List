@@ -1,9 +1,18 @@
-import todo_item from './objectController';
-import display from './displayController'
+import {todo_item, updateTasks, tasks} from './objectController';
+import {displayTasks, displayForm} from './displayController';
 
-const sleep = todo_item('sleep', 'go to bed', 'now', 'high');
-// sleep.list();
 
-display(sleep);
+const newTask = document.querySelector('button');
+newTask.addEventListener('click', () => {
+  displayForm();
+  document.querySelector('.new-task').reset();
+});
 
-export default sleep
+const addTask = document.querySelector('.add-task');
+addTask.addEventListener('click', e => {
+  // validateForm();
+  updateTasks();
+  displayTasks();
+  displayForm();
+  document.querySelector('.new-task').reset();
+});
