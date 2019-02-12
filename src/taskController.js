@@ -1,7 +1,7 @@
 var tasks = [];
 
 const todo_item = (title, description, dueDate, priority) => {
-  const list = () => `${title} - ${description}, ${dueDate}`;
+  const list = () => `${title} - ${dueDate}\n ${description}\n Priority: ${priority}`;
   return {
     list,
     title,

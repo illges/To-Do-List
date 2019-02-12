@@ -22,21 +22,69 @@ header {
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  /* grid-template-rows: auto; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
 }
 
+/* Project Column */
+
 .projects {
+  display: block;
+  width: 300px;
+  background: #e5ff52;
+}
+
+.projects-heading {
+    border-bottom: solid 2px #b93030;
+    margin: 10px;
+}
+
+.projects-heading > h1 {
+  padding: 0 30px 5px 10px;
+}
+
+#project-list {
+    border-right: solid 2px #b93030;
+    margin: 5px;
+}
+
+#project-list > * {
+  margin: 5px;
+  padding: 5px 5px 5px 25px;
+}
+
+#project-form {
   display: grid;
-  justify-content: right;
+  justify-items: center;
+}
+.new-project {
+  display: none;
+  justify-items: center;
+  margin: 5px 0 0 0;
+  border-radius: 10px;
+  color: white;
+  background-color: #b93030;;
+}
+.new-project > * {
   margin: 5px;
 }
 
+.selected {
+  background: #b93030;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Task Column */
+
 .tasks {
   display: grid;
+  width: 400px;
   padding: 10px;
   justify-content: left;
+  background: #86c9ff;
 }
 
 .tasks > * {
@@ -47,10 +95,9 @@ header {
 
 .new-task {
   display: none;
-  /* border: 2px solid black; */
   border-radius: 10px;
   color: white;
-  background-color: #2667e0;
+  background-color: #b93030;;
 }
 
 #task-list > * {
@@ -59,13 +106,28 @@ header {
   border-top: 2px solid #b93030;
 }
 
+.task-item > * {
+  margin: 5px;
+}
+
+/* Buttons */
+
 button {
   width: 100px;
   height: 40px;
   border-radius: 8px;
-  margin: 5px 5px 5px 80px;;
   color: white;
   background-color: #b93030;
+}
+
+/* Form Validation */
+
+input:invalid {
+  background:  #ffffff;
+}
+
+input:valid {
+  background: #23fe2e;
 }
 
 

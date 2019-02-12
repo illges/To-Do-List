@@ -12,29 +12,44 @@
           </header>
           <div class="wrapper">
             <div class="projects">
-                <h1>projects</h1>
-                <p>My Reading List</p>
-                <p>My Coding List</p>
+                <div class="projects-heading">
+                  <h1>Projects</h1>
+                </div>
+                <ul id="project-list" style="list-style-type:square;">
+                  <!-- <div class="project-item selected">Coding Tasks</div> -->
+                </ul>
+                <div id="project-form">
+                  <button class="project-btn">New Project</button>
+                  <form class="new-project">
+                    <div class="form-group">
+                      <label for="project-title">Title:</label>
+                      <input type="text" name="project-title" id="project-title" required>
+                    </div>
+                    <div class="button-group">
+                      <input type="button" value="Add Project" class="add-project">
+                    </div>
+                  </form>
+                </div>
             </div>
             <div class="tasks">
               <!-- <h1>tasks</h1> -->
-              <button>New Task</button>
+              <button class="task-btn">New Task</button>
               <form class="new-task">
                 <div class="form-group">
                   <label for="input-title">Title:</label>
-                  <input type="text" name="input-title" id="input-title" placeholder="namesake">
+                  <input type="text" name="input-title" id="input-title" required>
                 </div>
                 <div class="form-group">
                   <label for="input-description">Description:</label>
-                  <input type="text" name="input-description" id="input-description">
+                  <input type="text" name="input-description" id="input-description" required>
                 </div>
                 <div class="form-group">
                   <label for="input-date">Target Date:</label>
-                  <input type="date" name="input-date" id="input-date">
+                  <input type="date" name="input-date" id="input-date" required>
                 </div>
                 <div class="form-group">
                   <label for="input-priority">Priority:</label>
-                  <input type="checkbox" name="input-priority" id="input-priority">
+                  <input type="checkbox" name="input-priority" id="input-priority" required>
                 </div>
                 <div class="button-group">
                   <input type="button" value="Add Task" class="add-task">
