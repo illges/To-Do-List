@@ -24,7 +24,7 @@ header {
 .wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  /* justify-content: center; */
   height: 100vh;
 }
 
@@ -33,12 +33,14 @@ header {
 .projects {
   display: block;
   width: 300px;
-  background: #e5ff52;
+  /* background: #e5ff52; */
+  background: #fff;
 }
 
 .projects-heading {
-    border-bottom: solid 2px #b93030;
-    margin: 10px;
+  height: 47px;
+  border-bottom: solid 2px #b93030;
+  margin: 10px;
 }
 
 .projects-heading > h1 {
@@ -81,23 +83,32 @@ header {
 
 .tasks {
   display: grid;
-  width: 400px;
+  /* justify-items: center; */
+  grid-template-rows: 40px 150px auto;
+  width: 100%;
   padding: 10px;
-  justify-content: left;
-  background: #86c9ff;
+  /* background: #86c9ff; */
+  background: #fff;
 }
 
-.tasks > * {
-  padding: 5px;
-  display: grid;
-  justify-content: center;
+.task-btn {
+  justify-self: center;
 }
 
 .new-task {
+  justify-self: center;
   display: none;
+  grid-template-rows: repeat(5, 25px);
+  grid-row-gap: 2px;
+  justify-items: center;
   border-radius: 10px;
+  margin: 5px 0 0 0;
   color: white;
   background-color: #b93030;;
+}
+
+.new-task > * {
+  margin: 5px;
 }
 
 #task-list > * {
@@ -116,19 +127,19 @@ button {
   width: 100px;
   height: 40px;
   border-radius: 8px;
-  color: white;
+  color: #fff;
   background-color: #b93030;
 }
 
 /* Form Validation */
 
-input:invalid {
-  background:  #ffffff;
+/* input:invalid {
+  background:  #fff;
 }
 
 input:valid {
   background: #23fe2e;
-}
+} */
 
 
 

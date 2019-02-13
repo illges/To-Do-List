@@ -4,9 +4,11 @@ import {updateProjects} from './projectController';
 import {
   displayProjectList,
   displayProjectForm,
-  selectProject
+  selectProject,
+  initProjects
 } from "./displayProjectController";
 
+initProjects();
 
 const newTask = document.querySelector('.task-btn');
 newTask.addEventListener('click', () => {
@@ -16,7 +18,6 @@ newTask.addEventListener('click', () => {
 
 const addTask = document.querySelector('.add-task');
 addTask.addEventListener('click', () => {
-  // validateForm();
   updateTasks();
   displayTaskList();
   displayTaskForm();

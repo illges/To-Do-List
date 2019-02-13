@@ -1,13 +1,22 @@
 import {project_item, projects} from './projectController';
 
+const initProjects = () => {
+  projects.push(project_item('General', true));
+  displayProjectList();
+}
+
 const displayProjectList = () => {
   const ul = document.getElementById('project-list');
   const project = document.createElement('li');
-  project.classList.add('project-item');
   
-  project.innerHTML = projects[projects.length -1];
+  Array.from(document.querySelectorAll('li'))
+    .forEach(item => item.classList.remove('selected'));
   
-  // ul.appendChild(project);
+  project.classList.add('project-item', 'selected');
+
+  
+  project.innerHTML = projects[projects.length -1].title;
+  
   ul.appendChild(project);
 }
 
@@ -25,10 +34,20 @@ const displayProjectForm = () => {
 }
 
 const changeSelected = () => {
-  console.log(event.target);
+  console.log(event.target.innerHTML);
+
   Array.from(document.querySelectorAll('.project-item'))
-    .forEach(item => item.classList.remove('selected'));
+    .forEach((item, index) => {
+      item.classList.remove('selected');
+      if (projects[index].title === event.target.innerHTML) {
+        projects[index].selected = true;
+      } else {
+        projects[index].selected = false;
+      }
+    });
+
   event.target.classList.add('selected');
+  return console.log(projects)
 }
 
 const selectProject = () => {
@@ -40,4 +59,4 @@ const selectProject = () => {
   });
 }
 
-export {displayProjectList, displayProjectForm, selectProject};
+export {displayProjectList, displayProjectForm, selectProject, initProjects};

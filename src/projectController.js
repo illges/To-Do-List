@@ -1,8 +1,12 @@
 var projects = [];
 
-const project_item = (title) => {
+const project_item = (title, selected) => {
   title
-  return title
+  selected
+  return {
+    title,
+    selected
+  };
 }
 
 const updateProjects = () => {
@@ -10,9 +14,15 @@ const updateProjects = () => {
 		title : document.getElementById('project-title').value
   };
   
-  projects.push(project_item(form.title));
+  projects.forEach(item => {item.selected = false});
 
-  return console.log(projects)
+  if (form.title) {
+    projects.push(project_item(form.title, true));
+    return console.log(projects)
+  } else {
+    alert('Please fill out the form correctly!');
+  }
+  
 }
 
 export {project_item, updateProjects, projects};
